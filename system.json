@@ -1,12 +1,12 @@
 {
-    "name": "custom-system-builder",
-    "title": "Custom System Builder",
+    "name": "vtt-warhammer-40k",
+    "title": "FoundryVTT Warhammer 40k",
     "description": "",
     "version": "1.7.2",
     "minimumCoreVersion": "9",
     "compatibleCoreVersion": "9",
     "templateVersion": 11,
-    "author": "LinkedFluuuush",
+    "author": "Mikerspp",
     "scripts": [
         "lib/math.js",
         "scripts/chat-enhancements.js"
@@ -38,3 +38,4 @@
     "manifest": "https://raw.githubusercontent.com/Mikerspp/FoundryVTT_Warhammer40k/main/system.json",
     "download": "https://gitlab.com/linkedfluuuush/custom-system-builder/-/releases/1.7.2/downloads/custom-system-builder.zip"
 }
+
