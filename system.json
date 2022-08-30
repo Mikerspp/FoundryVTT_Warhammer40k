@@ -3,8 +3,8 @@
     "title": "Minimal World Building",
     "description": "A human-readable description of your system.",
     "version": "1.0.0",
-    "minimumCoreVersion": "9.238",
-    "compatibleCoreVersion": "9",
+    "minimumCoreVersion": "0.9.238",
+    "compatibleCoreVersion": "0.9.280",
     "authors": [
       {
         "name": "Mikerspp",
