@@ -47,6 +47,6 @@
     "primaryTokenAttribute": "resources.wounds",
     "secondaryTokenAttribute": "resources.power",
     "url": "https://github.com/Mikerspp/FoundryVTT_Warhammer",
-    "manifest": "https://raw.githubusercontent.com/Mikerspp/FoundryVTT_Warhammer40k/1.0/system.json",
+    "manifest": "https://raw.githubusercontent.com/Mikerspp/FoundryVTT_Warhammer40k/main/system.json",
     "download": "https://github.com/Mikerspp/FoundryVTT_Warhammer40k/archive/refs/tags/1.0.zip"
   }
