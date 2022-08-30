@@ -36,6 +36,6 @@
     "gridUnits": "m",
     "url": "https://github.com/Mikerspp/FoundryVTT_Warhammer40k/",
     "manifest": "https://raw.githubusercontent.com/Mikerspp/FoundryVTT_Warhammer40k/main/system.json",
-    "download": "https://gitlab.com/linkedfluuuush/custom-system-builder/-/releases/1.7.2/downloads/custom-system-builder.zip"
+    "download": "https://github.com/Mikerspp/FoundryVTT_Warhammer40k/archive/refs/tags/1.2.zip"
 }
 
