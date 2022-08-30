@@ -1,0 +1,26 @@
+{
+"Actor": {
+    "types": ["Unit"],
+    "templates": {
+        "background": {
+            "biography": ""
+        }
+    },
+    "resources": {
+        "Move":{
+            "value": 6,
+            "max": 6
+        },
+        "Wounds":{
+            "min":0,
+            "value":6,
+            "max":6
+        },
+        "Ballistic":{
+            "value":6,
+            "max":6
+        }
+    }
+}
+
+}
