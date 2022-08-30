@@ -1,0 +1,52 @@
+<form class="{{cssClass}} {{item.type}} {{template}} custom-system-actor" autocomplete="off">
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <div
+            class="profile-img-container"
+            style="width: {{display.pp_width}}px; height: {{display.pp_height}}px; flex:0 0 {{display.pp_width}}px;"
+        >
+            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        </div>
+        <div class="header-fields">
+            <h1 class="itemname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+            </h1>
+
+            {{#if isGM}}
+            <div class="custom-system-sheet-actions">
+                <div class="custom-system-template-select">
+                    <label for="template"> Template : </label>
+
+                    <select id="template" name="data.template">
+                        {{#select data.template}} {{#each availableTemplates}}
+                        <option value="{{this.id}}">{{this.name}}</option>
+                        {{/each}} {{/select}}
+                    </select>
+                    <a id="custom-system-reload-template"><i class="fas fa-sync"></i></a>
+                </div>
+            </div>
+            {{/if}}
+            {{#if isEditable}}
+            <div class="custom-system-sheet-actions">
+                {{#unless isEmbedded}}
+                <label>
+                    Make item unique
+                    <input
+                        type="checkbox"
+                        name="data.unique"
+                        class="custom-system-item-unique"
+                        {{checked
+                        data.unique}}
+                    />
+                </label>
+                {{/unless}}
+                <input type="button" class="custom-system-configure-modifiers" value="Configure item modifiers" />
+            </div>
+            {{/if}}
+
+            <div class="custom-system-customHeader"></div>
+        </div>
+    </header>
+
+    <div class="custom-system-customBody"></div>
+</form>

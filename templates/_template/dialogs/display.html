@@ -1,0 +1,32 @@
+<div class="custom-system-display">
+    <label for="custom-system-display-width">Sheet default width</label>
+    <input type="text" id="custom-system-display-width" class="custom-system-display-width" value="{{width}}" />
+    <br />
+    <label for="custom-system-display-height">Sheet default height</label>
+    <input type="text" id="custom-system-display-height" class="custom-system-display-height" value="{{height}}" />
+    <br />
+    <label for="custom-system-display-fix-size">Prevent sheet resizing</label>
+    <input type="checkbox" id="custom-system-display-fix-size" class="custom-system-display-fix-size"
+           {{checked fix_size}} />
+    <br />
+    <label for="custom-system-display-pp-width">Profile picture width</label>
+    <input
+        type="text"
+        id="custom-system-display-pp-width"
+        class="custom-system-display-pp-width"
+        value="{{pp_width}}"
+    />
+    <br />
+    <label for="custom-system-display-pp-height">Profile picture height</label>
+    <input
+        type="text"
+        id="custom-system-display-pp-height"
+        class="custom-system-display-pp-height"
+        value="{{pp_height}}"
+    />
+</div>
+<script>
+    (() => {
+        $('.custom-system-attributes').parents('.dialog').css('height', 'auto').css('max-height', '75%');
+    })();
+</script>

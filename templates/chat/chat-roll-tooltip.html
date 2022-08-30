@@ -1,0 +1,22 @@
+<div class="inline-roll">
+    <div class="dice-tooltip">
+        <section class="tooltip-part">
+            <div class="dice">
+                <header class="part-header flexrow">
+                    <span class="part-formula">{{raw}}</span>
+
+                    <span class="part-total">{{result}}</span>
+                </header>
+                {{#if arrayExplanation.length}}
+                <ol class="dice-rolls">
+                    {{#each arrayExplanation}}
+                    <li>{{{this.offset}}}<b>{{{this.name}}}</b> = {{this.value}}</li>
+                    {{#if this.dice}}
+                    <li>{{{this.dice}}}</li>
+                    {{/if}} {{/each}}
+                </ol>
+                {{/if}}
+            </div>
+        </section>
+    </div>
+</div>

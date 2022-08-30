@@ -1,0 +1,34 @@
+<table class="custom-system-attribute-bars">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Maximum</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each attribute}} {{#if this.value}}
+        <tr class="custom-system-attribute-bar">
+            <td>
+                <input type="text" class="custom-system-attribute-name" value="{{this.name}}" />
+            </td>
+            <td>
+                <input type="text" class="custom-system-attribute-value" value="{{this.value}}" />
+            </td>
+            <td>
+                <input type="text" class="custom-system-attribute-max" value="{{this.max}}" />
+            </td>
+            <td class="custom-system-attribute-controls">
+                <a class="custom-system-delete-attribute-bar"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+        {{/if}} {{/each}}
+        <tr>
+            <td colspan="3"></td>
+            <td>
+                <a><i class="fas fa-plus-circle" id="addAttributeBar"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

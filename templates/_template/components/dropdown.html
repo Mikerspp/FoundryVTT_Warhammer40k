@@ -1,0 +1,139 @@
+<div class="custom-system-form-field">
+    <label for="selectLabel">Label (optional)</label>
+    <input id="selectLabel" type="text" data-key="label" value="{{label}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="dynamicTableOptions">Use a dynamic table column as the options</label>
+    <input
+        type="checkbox"
+        id="dynamicTableOptions"
+        onchange="toggleSelectSource.apply(this, arguments);"
+        {{checked
+        dynamicTableOptions}}
+    />
+</div>
+
+<div class="custom-system-custom-options" style="{{#if dynamicTableOptions}}display:none{{/if}}">
+    <div class="custom-system-form-field">
+        <label>Options</label>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Label</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each options}}
+                <tr class="custom-system-dropdown-option">
+                    <td><input type="text" class="custom-system-dropdown-option-key" value="{{this.key}}" /></td>
+                    <td><input type="text" class="custom-system-dropdown-option-value" value="{{this.value}}" /></td>
+                    <td>
+                        <a class="custom-system-delete-option" onclick="deleteOptionRow.apply(this, arguments);"
+                            ><i class="fas fa-trash"></i
+                        ></a>
+                    </td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td colspan="2"></td>
+                    <td>
+                        <a onclick="addOption.apply(this, arguments);"><i class="fas fa-plus-circle"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="custom-system-dynamic-options" style="{{#unless dynamicTableOptions}}display:none{{/unless}}">
+    <div class="custom-system-form-field">
+        <label for="selectDynamicTableKey">Dynamic table key</label>
+        <input id="selectDynamicTableKey" type="text" data-key="tableKey" value="{{tableKey}}" />
+    </div>
+
+    <div class="custom-system-form-field">
+        <label for="selectDynamicTableKeyColumn">Column from the dynamic table to use as option key</label>
+        <input id="selectDynamicTableKeyColumn" type="text" data-key="tableKeyColumn" value="{{tableKeyColumn}}" />
+    </div>
+
+    <div class="custom-system-form-field">
+        <label for="selectDynamicTableLabelColumn">
+            Column from the dynamic table to use as option label (optional)
+        </label>
+        <input
+            id="selectDynamicTableLabelColumn"
+            type="text"
+            data-key="tableLabelColumn"
+            value="{{tableLabelColumn}}"
+        />
+    </div>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="selectDefaultValue">
+        Default value (optional)<br />
+        Please enter the key to your default value.<br />
+        Without a default value, an empty option will automatically be added to your dropdown field.
+    </label>
+    <input id="selectDefaultValue" type="text" data-key="defaultValue" value="{{defaultValue}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="selectSize">Size</label>
+    <select id="selectSize" data-key="size">
+        {{#select size}}
+        <option value="full-size">Auto</option>
+        <option value="x-small">Tiny</option>
+        <option value="small">Smaller</option>
+        <option value="m-small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="m-large">Large</option>
+        <option value="large">Larger</option>
+        <option value="x-large">Gigantic</option>
+        {{/select}}
+    </select>
+</div>
+
+<script>
+    function deleteOptionRow(ev) {
+        const target = $(ev.currentTarget);
+        let row = target.parents('tr');
+
+        // Remove it from the DOM
+        $(row).remove();
+    }
+
+    function addOption(ev) {
+        const target = $(ev.currentTarget);
+
+        // Last row contains only the add button
+        const lastRow = target.parents('tr');
+
+        // Create new row
+        const newRow = $(
+            `<tr class="custom-system-dropdown-option"><td>
+    <input type="text" class="custom-system-dropdown-option-key" /></td><td>
+    <input type="text" class="custom-system-dropdown-option-value" /></td>
+    <td><a class="custom-system-delete-option" onclick="deleteOptionRow.apply(this, arguments);"><i class="fas fa-trash"></i></a>
+    </td></tr>`
+        );
+
+        // Insert new row before control row
+        lastRow.before(newRow);
+    }
+
+    function toggleSelectSource(ev) {
+        const target = $(ev.currentTarget);
+
+        if (target.is(':checked')) {
+            $('.custom-system-dynamic-options').slideDown(200);
+            $('.custom-system-custom-options').slideUp(200);
+        } else {
+            $('.custom-system-dynamic-options').slideUp(200);
+            $('.custom-system-custom-options').slideDown(200);
+        }
+    }
+</script>

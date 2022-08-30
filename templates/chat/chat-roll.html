@@ -1,0 +1,11 @@
+<div
+    class="custom-system-roll"
+    title="{{rollData.formula}}"
+    data-roll-data="{{jsonRollData}}"
+    data-roll-mode="{{rollMode}}"
+    data-hidden="{{rollData.hidden}}"
+>
+    {{#if rollData.hasDice}}
+    <i class="fas fa-dice-d20"></i>
+    {{/if}} {{{rollData.result}}}
+</div>

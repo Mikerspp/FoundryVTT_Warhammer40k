@@ -1,0 +1,115 @@
+<div class="custom-system-form-field">
+    <label for="labelStyle">Label style</label>
+    <select id="labelStyle" data-key="style">
+        {{#select style}}
+        <option value="label">Default</option>
+        <option value="title">Title</option>
+        <option value="subtitle">Subtitle</option>
+        <option value="bold">Bold text</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelSize">Size</label>
+    <select id="labelSize" data-key="size">
+        {{#select size}}
+        <option value="full-size">Auto</option>
+        <option value="x-small">Tiny</option>
+        <option value="small">Smaller</option>
+        <option value="m-small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="m-large">Large</option>
+        <option value="large">Larger</option>
+        <option value="x-large">Gigantic</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelText">Label text (optional)</label>
+    <textarea id="labelText" data-key="value">{{value}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelRichText">Use rich text editor for label</label>
+    <input type="checkbox" id="labelRichText" onchange="toggleRichTextLabelEditor.apply(this, arguments);" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelPrefix">Label prefix (optional)</label>
+    <textarea id="labelPrefix" data-key="prefix">{{prefix}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelSuffix">Label suffix (optional)</label>
+    <textarea id="labelSuffix" data-key="suffix">{{suffix}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelIcon">Label icon (optional)</label>
+    <input id="labelIcon" type="text" data-key="icon" value="{{icon}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelRollMessage">Label roll message (optional)</label>
+    <textarea id="labelRollMessage" data-key="rollMessage" rows="10">{{rollMessage}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="rollRichText">Use rich text editor for roll message</label>
+    <input type="checkbox" id="rollRichText" onchange="toggleRichTextRollEditor.apply(this, arguments);" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="labelAltRollMessage">Label alternative roll message - triggered on SHIFT+CLICK (optional)</label>
+    <textarea id="labelAltRollMessage" data-key="altRollMessage" rows="10">{{altRollMessage}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="altRollRichText">Use rich text editor for alternative roll message</label>
+    <input type="checkbox" id="altRollRichText" onchange="toggleRichTextAltRollEditor.apply(this, arguments);" />
+</div>
+
+<script>
+    function toggleRichTextRollEditor(ev) {
+        let checkbox = $(ev.currentTarget);
+
+        tinymce.remove('textarea#labelRollMessage');
+
+        if (checkbox.is(':checked')) {
+            tinymce.init({
+                ...CONFIG.TinyMCE,
+                selector: 'textarea#labelRollMessage'
+            });
+        }
+
+        console.log('Ping');
+    }
+
+    function toggleRichTextLabelEditor(ev) {
+        let checkbox = $(ev.currentTarget);
+
+        tinymce.remove('textarea#labelText');
+
+        if (checkbox.is(':checked')) {
+            tinymce.init({
+                ...CONFIG.TinyMCE,
+                selector: 'textarea#labelText'
+            });
+        }
+    }
+
+    function toggleRichTextAltRollEditor(ev) {
+        let checkbox = $(ev.currentTarget);
+
+        tinymce.remove('textarea#labelAltRollMessage');
+
+        if (checkbox.is(':checked')) {
+            tinymce.init({
+                ...CONFIG.TinyMCE,
+                selector: 'textarea#labelAltRollMessage'
+            });
+        }
+    }
+</script>

@@ -1,0 +1,24 @@
+.custom-system-form-field {
+    margin: 8px;
+}
+
+.custom-system-form-field > label {
+    margin-right: 8px;
+}
+
+.custom-system-form-field > label > input, .custom-system-form-field > label > select {
+    margin-left: 8px;
+}
+
+.custom-system-component-editor {
+    display: none;
+}
+
+.CSB-itemProperty {
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.custom-system-key-warning {
+    display: none;
+    margin-top: 8px;
+}

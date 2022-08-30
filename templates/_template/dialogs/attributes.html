@@ -1,0 +1,30 @@
+<table class="custom-system-attributes">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Formula</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each attribute}}
+        <tr class="custom-system-hidden-attribute">
+            <td>
+                <input type="text" class="custom-system-attribute-name" value="{{this.name}}" />
+            </td>
+            <td>
+                <textarea class="custom-system-attribute-formula">{{this.value}}</textarea>
+            </td>
+            <td class="custom-system-attribute-controls">
+                <a class="custom-system-delete-hidden-attribute"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+        <tr>
+            <td colspan="2"></td>
+            <td>
+                <a><i class="fas fa-plus-circle" id="addAttribute"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+.custom-system-user-inputs td {
+    padding: 8px !important;
+}
+
+.custom-system-user-input {
+    width: fill-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
+}

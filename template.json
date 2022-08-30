@@ -1,26 +1,86 @@
 {
-"Actor": {
-    "types": ["Unit"],
+  "Actor": {
+    "types": [
+      "_template",
+      "character"
+    ],
     "templates": {
-        "background": {
-            "biography": ""
-        }
+      "base": {
+        "hidden": [],
+        "header": {
+          "contents": [],
+          "key": "custom_header"
+        },
+        "body": {
+          "contents": [],
+          "key": "custom_body"
+        },
+        "display": {
+          "width": "600",
+          "height": "600",
+          "fix_size": false,
+          "pp_width": "64",
+          "pp_height": "64"
+        },
+        "attributeBar": {},
+        "activeEffects": {}
+      }
     },
-    "resources": {
-        "Move":{
-            "value": 6,
-            "max": 6
-        },
-        "Wounds":{
-            "min":0,
-            "value":6,
-            "max":6
-        },
-        "Ballistic":{
-            "value":6,
-            "max":6
-        }
+    "_template": {
+      "templates": [
+        "base"
+      ]
+    },
+    "character": {
+      "template": null,
+      "props": {},
+      "templates": [
+        "base"
+      ]
     }
-}
-
+  },
+  "Item": {
+    "types": [
+      "_equippableItemTemplate",
+      "equippableItem",
+      "subTemplate"
+    ],
+    "templates": {
+      "equippable": {
+        "hidden": [],
+        "header": {
+          "contents": []
+        },
+        "body": {
+          "contents": []
+        },
+        "display": {
+          "width": "600",
+          "height": "600",
+          "fix_size": false,
+          "pp_width": "64",
+          "pp_height": "64"
+        }
+      }
+    },
+    "_equippableItemTemplate": {
+      "templates": [
+        "equippable"
+      ]
+    },
+    "equippableItem": {
+      "templates": [
+        "equippable"
+      ],
+      "template": null,
+      "props": {},
+      "modifiers": [],
+      "unique": false
+    },
+    "subTemplate": {
+      "body": {
+        "contents": []
+      }
+    }
+  }
 }

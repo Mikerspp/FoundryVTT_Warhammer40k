@@ -1,0 +1,536 @@
+/* GLOBAL ACTOR STYLING */
+.custom-system-actor {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: -8px;
+    padding: 8px;
+    overflow: scroll;
+}
+
+.custom-system-actor .profile-img-container {
+    box-sizing: border-box;
+    border: 1px solid var(--color-border-dark);
+    border-radius: 2px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sheet .custom-system-actor header.sheet-header .profile-img-container img {
+    border: none;
+    margin: auto;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    overflow: hidden;
+    flex: none;
+}
+
+.custom-system-actor .tab {
+    height: 100%;
+}
+
+
+.custom-system-actor > .sheet-body {
+    height: 100%;
+}
+
+.custom-system-actor select {
+    width: fill-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+.custom-system-actor .editor {
+    height: 100%;
+    min-height: 100px;
+    width: 100%;
+}
+
+/* TEMPLATE SELECTION ZONE */
+.custom-system-sheet-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.custom-system-template-select > select {
+    width: auto !important;
+    min-width: 200px;
+    margin-left: 16px;
+}
+
+.custom-system-template-select > a {
+    background: rgba(187, 187, 187, 0.75);
+    border: 1px solid var(--color-border-dark-1);
+    border-radius: 4px;
+    padding: 2px;
+    box-shadow: 0 0 1px var(--color-shadow-dark);
+    margin-left: 8px;
+}
+
+/* PANELS STYLING */
+
+.custom-system-panel {
+    margin: 5px;
+}
+
+.grid,
+.grid-2col {
+    display: grid;
+    grid-column: span 2 / span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.grid-3col {
+    grid-column: span 3 / span 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+    grid-column: span 4 / span 4;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+    grid-column: span 5 / span 5;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+    grid-column: span 6 / span 6;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+    grid-column: span 7 / span 7;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+    grid-column: span 8 / span 8;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+    grid-column: span 9 / span 9;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+    grid-column: span 10 / span 10;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+    grid-column: span 11 / span 11;
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+    grid-column: span 12 / span 12;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+    grid-column-start: 2;
+}
+
+.grid-start-3 {
+    grid-column-start: 3;
+}
+
+.grid-start-4 {
+    grid-column-start: 4;
+}
+
+.grid-start-5 {
+    grid-column-start: 5;
+}
+
+.grid-start-6 {
+    grid-column-start: 6;
+}
+
+.grid-start-7 {
+    grid-column-start: 7;
+}
+
+.grid-start-8 {
+    grid-column-start: 8;
+}
+
+.grid-start-9 {
+    grid-column-start: 9;
+}
+
+.grid-start-10 {
+    grid-column-start: 10;
+}
+
+.grid-start-11 {
+    grid-column-start: 11;
+}
+
+.grid-start-12 {
+    grid-column-start: 12;
+}
+
+.grid-span-2 {
+    grid-column-end: span 2;
+}
+
+.grid-span-3 {
+    grid-column-end: span 3;
+}
+
+.grid-span-4 {
+    grid-column-end: span 4;
+}
+
+.grid-span-5 {
+    grid-column-end: span 5;
+}
+
+.grid-span-6 {
+    grid-column-end: span 6;
+}
+
+.grid-span-7 {
+    grid-column-end: span 7;
+}
+
+.grid-span-8 {
+    grid-column-end: span 8;
+}
+
+.grid-span-9 {
+    grid-column-end: span 9;
+}
+
+.grid-span-10 {
+    grid-column-end: span 10;
+}
+
+.grid-span-11 {
+    grid-column-end: span 11;
+}
+
+.grid-span-12 {
+    grid-column-end: span 12;
+}
+
+.flex-group-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    align-items: stretch;
+}
+
+.flex-group-center > .custom-system-rollable > .custom-system-field,
+.flex-group-center > .custom-system-field {
+    justify-content: center;
+    text-align: center;
+}
+
+.flex-group-center.flex-group-no-stretch {
+    align-items: center;
+}
+
+.flex-group-left {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.flex-group-left.flex-group-no-stretch {
+    align-items: flex-start;
+}
+
+.flex-group-left > .custom-system-rollable > .custom-system-field,
+.flex-group-left > .custom-system-field {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.flex-group-right {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.flex-group-right.flex-group-no-stretch {
+    align-items: flex-end;
+}
+
+.flex-group-right > .custom-system-rollable > .custom-system-field,
+.flex-group-right > .custom-system-field {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.flex-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.flex-between > .custom-system-rollable > .custom-system-field,
+.flex-between > .custom-system-field {
+    justify-content: space-between;
+    text-align: justify;
+}
+
+/* FIELDS STYLING */
+
+.custom-system-field-root {
+    margin-left: 10px;
+}
+
+.custom-system-field {
+    display: inline-flex;
+    align-items: center;
+    width: fill-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.custom-system-field > label {
+    margin-right: 5px;
+}
+
+.custom-system-field-x-small {
+    width: 1.5em;
+}
+
+.custom-system-field-small {
+    width: 4em;
+}
+
+.custom-system-field-m-small {
+    width: 7em;
+}
+
+.custom-system-field-medium {
+    width: 10em;
+}
+
+.custom-system-field-m-large {
+    width: 20em;
+}
+
+.custom-system-field-large {
+    width: 30em;
+}
+
+.custom-system-field-x-large {
+    width: 40em;
+}
+
+.custom-system-panel .custom-system-field-full-size {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.custom-system-label{
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.custom-system-label-root {
+    /*width: fill-available;*/
+    /*width: -webkit-fill-available;*/
+    /*width: -moz-available;*/
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-system-label-icons {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.custom-system-label-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.custom-system-rollable {
+    color: darkred;
+}
+
+.custom-system-roll-context {
+    width: max-content !important;
+    text-align: start !important;
+    z-index: 999 !important;
+}
+
+.custom-system-roll-icon {
+    margin-right: 5px;
+}
+
+.custom-system-number-input-span {
+    width: fill-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    position: relative;
+}
+
+.custom-system-number-field-control {
+    width: 26px;
+    height: 26px;
+    line-height: 10px;
+    position: absolute;
+    border-color: #FFFFFF55;
+    background-color: transparent;
+    border-top: none;
+    border-bottom: none;
+    z-index: 999 !important;
+}
+
+.custom-system-number-field-control-outer {
+    background-color: var(--color-bg-option) !important;
+    border: 1px solid var(--color-border-light-tertiary) !important;
+}
+
+.custom-system-number-field-control-minus {
+    left: 0;
+    border-left: none;
+}
+
+.custom-system-number-field-control-minus.custom-system-number-field-control-outer {
+    left: -26px !important;
+}
+
+.custom-system-number-field-control-plus {
+    right: 0;
+    border-right: none;
+}
+
+.custom-system-number-field-control-plus.custom-system-number-field-control-outer {
+    right: -26px !important;
+}
+
+/* TABLE STYLING */
+
+table {
+    height: fit-content;
+}
+
+.custom-system-cell {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.custom-system-cell-alignCenter {
+    text-align: center;
+}
+
+.custom-system-cell-alignCenter > .custom-system-rollable > .custom-system-field,
+.custom-system-cell-alignCenter > .custom-system-field {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.custom-system-cell-alignLeft {
+    text-align: left;
+}
+
+.custom-system-cell-alignLeft > .custom-system-rollable > .custom-system-field,
+.custom-system-cell-alignLeft > .custom-system-field {
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.custom-system-cell-alignRight {
+    text-align: right;
+}
+
+.custom-system-cell-alignRight > .custom-system-rollable > .custom-system-field,
+.custom-system-cell-alignRight > .custom-system-field {
+    justify-content: flex-end;
+    text-align: right;
+    align-items: flex-end;
+}
+
+/* DYNAMIC TABLE STYLING */
+
+.custom-system-cell-boldTitle {
+    font-weight: bold;
+}
+
+.custom-system-dynamic-table-row-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.custom-system-dynamic-table-sort-icon-wrapper {
+    margin-right: 5px;
+}
+
+.custom-system-dynamic-table-sort-icon {
+    display: block;
+    font-size: 0.75em;
+}
+
+/* RICH EDITOR STYLING */
+
+.custom-system-rich-editor {
+    height: fill-available;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    width: fill-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+.custom-system-rich-editor-button {
+    margin-left: 8px;
+}
+
+.custom-system-rich-editor-button-float {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(187, 187, 187, 0.75);
+    border: 1px solid var(--color-border-dark-1);
+    border-radius: 4px;
+    padding: 1px 2px;
+    box-shadow: 0 0 1px var(--color-shadow-dark);
+}
+
+.custom-system-rich-content {
+    width: 100%;
+}
+
+.custom-system-text-area {
+    display: block;
+}

@@ -1,0 +1,47 @@
+<form
+  class="{{cssClass}} {{actor.type}} {{template}} custom-system-actor"
+  autocomplete="off"
+>
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <div class="profile-img-container" style="width: {{display.pp_width}}px; height: {{display.pp_height}}px; flex:0 0 {{display.pp_width}}px;">
+      <img
+        class="profile-img"
+        src="{{actor.img}}"
+        data-edit="img"
+        title="{{actor.name}}"
+      />
+    </div>
+    <div class="header-fields">
+      <h1 class="charname">
+        <input
+          name="name"
+          type="text"
+          value="{{actor.name}}"
+          placeholder="Name"
+        />
+      </h1>
+
+      {{#if isGM}}
+      <div class="custom-system-sheet-actions">
+        <div class="custom-system-template-select">
+          <label for="template"> Template : </label>
+
+          <select id="template" name="data.template">
+            {{#select data.template}} {{#each availableTemplates}}
+            <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}} {{/select}}
+          </select>
+          <a id="custom-system-reload-template"
+          ><i class="fas fa-sync"></i
+          ></a>
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="custom-system-customHeader"></div>
+    </div>
+  </header>
+
+  <div class="custom-system-customBody"></div>
+</form>

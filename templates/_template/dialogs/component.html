@@ -1,0 +1,56 @@
+<div class="custom-system-component-editor-dialog">
+    <div class="custom-system-component-generic-fields">
+        <div class="custom-system-form-field">
+            <label for="compType">Select component type</label>
+            <select id="compType" data-key="type"></select>
+        </div>
+        <div class="custom-system-form-field">
+            <label for="compKey">Component key</label><input type="text" id="compKey" value="{{key}}" data-key="key" />
+            <div class="custom-system-key-warning notification warning">
+                Your key is a reserved word in the Formula computing system. Be aware that using this key in a Formula
+                may cause unexpected results.
+            </div>
+        </div>
+
+        <div class="custom-system-form-field">
+            <label for="compTooltip">Component's tooltip</label>
+            <input type="text" id="compTooltip" value="{{tooltip}}" data-key="tooltip" />
+        </div>
+
+        <div class="custom-system-form-field">
+            <label for="compRole">Minimum role to see the component</label>
+            <select id="compRole" data-key="role">
+                {{selectOptions roleList selected=role localize=true}}
+            </select>
+        </div>
+        <div class="custom-system-form-field">
+            <label for="compPerm">Minimum permission to see the component</label>
+            <select id="compPerm" data-key="permission">
+                {{selectOptions permissionList selected=permission localize=true}}
+            </select>
+        </div>
+        {{#if isDynamic}}
+        <div class="custom-system-form-field">
+            <label for="compAlign">Alignment</label>
+            <select id="compAlign" data-key="align">
+                {{#select align}}
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+                {{/select}}
+            </select>
+        </div>
+
+        <div class="custom-system-form-field">
+            <label for="compColName">Column Name (optional)</label>
+            <input type="text" id="compColName" value="{{colName}}" data-key="colName" />
+        </div>
+        {{else}}
+        <div class="custom-system-form-field">
+            <label for="compClass">Additional CSS classes</label>
+            <input type="text" id="compClass" value="{{cssClass}}" data-key="cssClass" />
+        </div>
+        {{/if}}
+    </div>
+    <hr />
+</div>

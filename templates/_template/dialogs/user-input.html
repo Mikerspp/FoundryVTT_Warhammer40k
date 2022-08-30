@@ -1,0 +1,30 @@
+<table class="custom-system-user-inputs">
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each allUserVars}}
+        <tr>
+            <td><label for="{{this.name}}">{{this.name}}</label></td>
+            <td>
+                <input
+                    type="text"
+                    id="{{this.name}}"
+                    data-var-name="{{this.name}}"
+                    class="custom-system-user-input"
+                    value="{{this.default}}"
+                />
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<script>
+    (() => {
+        $('.custom-system-user-inputs').parents('.dialog').css('height', 'auto').css('max-height', '75%');
+    })();
+</script>

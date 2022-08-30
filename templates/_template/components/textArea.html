@@ -1,0 +1,29 @@
+<div class="custom-system-form-field">
+    <label for="textAreaLabel">Label (optional)</label>
+    <input id="textAreaLabel" type="text" data-key="label" value="{{label}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textAreaValue">Default value (optional)</label>
+    <textarea id="textAreaValue" data-key="defaultValue">{{defaultValue}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textAreaStyle">Style</label>
+    <select id="textAreaStyle" data-key="style">
+        {{#select style}}
+        <option value="sheet">In sheet editor</option>
+        <option value="dialog">Dialog editor</option>
+        <option value="icon">Icon only</option>
+        {{/select}}
+    </select>
+</div>
+
+<script>
+    tinymce.remove('textarea#textAreaValue');
+
+    tinymce.init({
+        ...CONFIG.TinyMCE,
+        selector: 'textarea#textAreaValue'
+    });
+</script>

@@ -1,0 +1,49 @@
+{
+    "id": "mysystem",
+    "title": "Minimal World Building",
+    "description": "A human-readable description of your system.",
+    "version": "1.0.0",
+    "minimumCoreVersion": "9.238",
+    "compatibleCoreVersion": "9",
+    "authors": [
+      {
+        "name": "Mikerspp",
+        "url": "YOUR WEBSITE ADDRESS HERE",
+        "email": "YOUR EMAIL ADDRESS HERE",
+        "discord": "YOUR DISCORD USERNAME HERE"
+      }
+    ],
+    "scripts": [
+      "scripts/system-script.js"
+    ],
+    "esmodules": [
+      "scripts/system-module.mjs"
+    ],
+    "styles": [
+      "styles/system-styles.css"
+    ],
+    "packs": [
+      {
+        "name": "unit",
+        "label": "My Units",
+        "path": "packs/units.db",
+        "type": "Actor"
+      }
+    ],
+  "languages": [
+      {
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json"
+      }
+    ],
+    "socket": true,
+    "initiative": "1d6",
+    "gridDistance": 10,
+    "gridUnits": "m",
+    "primaryTokenAttribute": null,
+    "secondaryTokenAttribute": null,
+    "url": "https://github.com/Mikerspp/FoundryVTT_Warhammer",
+    "manifest": "https://raw.githubusercontent.com/Mikerspp/FoundryVTT_Warhammer40k/main/system.json",
+    "download": "https://github.com/Mikerspp/FoundryVTT_Warhammer40k/archive/refs/tags/1.1.zip"
+  }

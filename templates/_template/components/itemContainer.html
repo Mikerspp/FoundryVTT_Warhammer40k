@@ -1,0 +1,126 @@
+<div class="custom-system-form-field">
+    <label for="itemHeadDisplay"> Display column names </label>
+    <input type="checkbox" id="itemHeadDisplay" data-key="headDisplay" {{checked headDisplay}} />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="itemHead"> Make column name bold </label>
+    <input type="checkbox" id="itemHead" data-key="head" {{checked head}} />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="itemDeleteWarning"> Show item delete button </label>
+    <input type="checkbox" id="itemShowDelete" data-key="showDelete" {{checked showDelete}} />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="itemDeleteWarning"> Show confirmation dialog on item delete </label>
+    <input type="checkbox" id="itemDeleteWarning" data-key="deleteWarning" {{checked deleteWarning}} />
+</div>
+
+<div class="custom-system-form-field"><h3>Filter items</h3></div>
+<div class="custom-system-form-field"><h4>Select templates :</h4></div>
+<div class="custom-system-form-field">
+    <div
+        style="
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+            align-items: center;
+        "
+    >
+        {{#each availableTemplates}}
+        <span>
+            <input
+                type="checkbox"
+                id="{{this.id}}"
+                value="{{this.id}}"
+                name="itemFilterTemplate"
+                {{checked
+                this.checked}}
+            />
+            <label for="{{this.id}}">{{this.name}}</label>
+        </span>
+        {{/each}}
+    </div>
+</div>
+<div class="custom-system-form-field"><h4>Add filters :</h4></div>
+<div class="custom-system-form-field">
+    <table id="CSB-itemFilters">
+        <thead>
+            <tr>
+                <td>Field key</td>
+                <td>operator</td>
+                <td>Filter value</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each itemFilter}}
+            <tr class="CSB-itemFilter">
+                <td><input type="text" name="itemFilterProp" style="width: 100px" value="{{this.prop}}" /></td>
+                <td>
+                    <select name="itemFilterOp" style="width: 120px">
+                        {{#select this.operator}}
+                        <option value="lt">is less than</option>
+                        <option value="leq">is less or equal to</option>
+                        <option value="eq">is</option>
+                        <option value="geq">is greater or equal to</option>
+                        <option value="gt">is greater than</option>
+                        {{/select}}
+                    </select>
+                </td>
+                <td><input type="text" name="itemFilterValue" style="width: 100px" value="{{this.value}}" /></td>
+                <td>
+                    <a class="CSB-deleteItemFilter"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <a id="CSB-itemAddFilter"><i class="fas fa-plus-circle"></i></a>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="itemNameLabel">Item reference column label</label>
+    <input id="itemNameLabel" type="text" data-key="nameLabel" value="{{nameLabel}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="itemNameAlign">Item reference column alignment</label>
+    <select id="itemNameAlign" data-key="nameAlign">
+        {{#select nameAlign}}
+        <option value="left">Left</option>
+        <option value="center">Center</option>
+        <option value="right">Right</option>
+        {{/select}}
+    </select>
+</div>
+
+<script>
+    $('#CSB-itemAddFilter').on('click', () => {
+        let newRow = $(`<tr class="CSB-itemFilter">
+      <td><input type="text" name="itemFilterProp" style="width: 100px;" /></td>
+      <td><select name="itemFilterOp" style="width: 120px;" >
+        <option value="lt">is less than</option>
+        <option value="leq">is less or equal to</option>
+        <option value="eq" selected="selected">is</option>
+        <option value="geq">is greater or equal to</option>
+        <option value="gt">is greater than</option>
+      </select>
+      </td>
+      <td><input type="text" name="itemFilterValue" style="width: 100px;" /></td>
+      <td><a class="CSB-deleteItemFilter"><i class="fas fa-trash"></i></a></td>
+    </tr>`);
+
+        $('#CSB-itemFilters > tbody').append(newRow);
+    });
+
+    $('#CSB-itemFilters').on('click', '.CSB-deleteItemFilter', (ev) => {
+        let target = $(ev.currentTarget);
+
+        target.parents('tr').remove();
+    });
+</script>

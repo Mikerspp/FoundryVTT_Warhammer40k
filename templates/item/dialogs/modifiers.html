@@ -1,0 +1,45 @@
+<table class="custom-system-item-modifiers">
+    <thead>
+        <tr>
+            <th>Prio.</th>
+            <th>Key</th>
+            <th>Op.</th>
+            <th>Value formula</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each modifier}}
+        <tr class="custom-system-item-modifier">
+            <td>
+                <input type="number" class="custom-system-modifier-priority" value="{{this.priority}}" />
+            </td>
+            <td>
+                <input type="text" class="custom-system-modifier-key" value="{{this.key}}" />
+            </td>
+            <td>
+                <select class="custom-system-modifier-operator">
+                    {{#select this.operator}}
+                    <option value="add">+</option>
+                    <option value="multiply">x</option>
+                    <option value="subtract">-</option>
+                    <option value="divide">/</option>
+                    {{/select}}
+                </select>
+            </td>
+            <td>
+                <textarea class="custom-system-modifier-formula">{{this.formula}}</textarea>
+            </td>
+            <td class="custom-system-modifier-controls">
+                <a class="custom-system-delete-modifier"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+        <tr>
+            <td colspan="4"></td>
+            <td>
+                <a><i class="fas fa-plus-circle" id="addModifier"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

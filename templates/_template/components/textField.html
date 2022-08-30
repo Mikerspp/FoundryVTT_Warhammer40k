@@ -1,0 +1,35 @@
+<div class="custom-system-form-field">
+    <label for="textFieldLabel">Label (optional)</label>
+    <input id="textFieldLabel" type="text" data-key="label" value="{{label}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textFieldSize">Size</label>
+    <select id="textFieldSize" data-key="size">
+        {{#select size}}
+        <option value="full-size">Auto</option>
+        <option value="x-small">Tiny</option>
+        <option value="small">Smaller</option>
+        <option value="m-small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="m-large">Large</option>
+        <option value="large">Larger</option>
+        <option value="x-large">Gigantic</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textFieldCharList">Allowed character list (optional)</label>
+    <input id="textFieldCharList" type="text" data-key="charList" value="{{charList}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textFieldMaxLength">Maximum length (optional)</label>
+    <input id="textFieldMaxLength" type="number" data-key="maxLength" value="{{maxLength}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textFieldValue">Default value (optional)</label>
+    <input id="textFieldValue" type="text" data-key="defaultValue" value="{{defaultValue}}" />
+</div>

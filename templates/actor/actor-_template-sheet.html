@@ -1,0 +1,28 @@
+<form class="{{cssClass}} {{actor.type}} custom-system-actor" autocomplete="off">
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <div
+            class="profile-img-container"
+            style="width: {{display.pp_width}}px; height: {{display.pp_height}}px; flex:0 0 {{display.pp_width}}px;"
+        >
+            <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </div>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+            </h1>
+
+            <div class="custom-system-sheet-actions">
+                <input type="button" class="custom-system-configure-display" value="Configure sheet display" />
+                <input type="button" class="custom-system-configure-attributes" value="Configure hidden attributes" />
+                <input type="button" class="custom-system-configure-attribute-bars" value="Configure attribute bars" />
+                <input type="button" class="custom-system-configure-active-effects" value="Configure active effects" />
+                <input type="button" class="custom-system-reload-all-sheets" value="Reload all character sheets" />
+            </div>
+
+            <div class="custom-system-customHeader"></div>
+        </div>
+    </header>
+
+    <div class="custom-system-customBody"></div>
+</form>

@@ -1,0 +1,21 @@
+<p>Please enter tab name and key.</p>
+<p>Name can be anything, key must be lowercase alphanumeric, and unique among tabs.</p>
+<div><label for="tab-name">Tab name : </label><input type="text" id="tab-name" value="{{name}}" /></div>
+<div><label for="tab-key">Tab key : </label><input type="text" id="tab-key" value="{{key}}" /></div>
+<div class="custom-system-form-field">
+    <label for="tab-tooltip">Tab's tooltip (shown when hovering over the tab name)</label>
+    <input type="text" id="tab-tooltip" value="{{tooltip}}" data-key="tooltip" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="tabRole">Minimum role to see the tab</label>
+    <select id="tabRole" data-key="role">
+        {{selectOptions roleList selected=role localize=true}}
+    </select>
+</div>
+<div class="custom-system-form-field">
+    <label for="tabPerm">Minimum permission to see the tab</label>
+    <select id="tabPerm" data-key="permission">
+        {{selectOptions permissionList selected=permission localize=true}}
+    </select>
+</div>

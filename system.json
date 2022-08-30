@@ -1,49 +1,40 @@
 {
-    "id": "mysystem",
-    "title": "Minimal World Building",
-    "description": "A human-readable description of your system.",
-    "version": "1.0.0",
-    "minimumCoreVersion": "0.9.238",
-    "compatibleCoreVersion": "0.9.280",
-    "authors": [
-      {
-        "name": "Mikerspp",
-        "url": "YOUR WEBSITE ADDRESS HERE",
-        "email": "YOUR EMAIL ADDRESS HERE",
-        "discord": "YOUR DISCORD USERNAME HERE"
-      }
-    ],
+    "name": "custom-system-builder",
+    "title": "Custom System Builder",
+    "description": "",
+    "version": "1.7.2",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "9",
+    "templateVersion": 11,
+    "author": "LinkedFluuuush",
     "scripts": [
-      "scripts/system-script.js"
+        "lib/math.js",
+        "scripts/chat-enhancements.js"
     ],
-    "esmodules": [
-      "scripts/system-module.mjs"
-    ],
+    "esmodules": ["module/custom-system-builder.js"],
     "styles": [
-      "styles/system-styles.css"
+        "css/actor/character-display.css",
+        "css/actor/template-display.css",
+        "css/chat-message.css",
+        "css/attributes-editor.css",
+        "css/component-editor.css",
+        "css/user-input-editor.css",
+        "css/export-display.css",
+        "css/modifiers-editor.css"
     ],
-    "packs": [
-      {
-        "name": "unit",
-        "label": "My Units",
-        "path": "packs/units.db",
-        "type": "Actor"
-      }
+    "packs": [],
+    "languages": [],
+    "dependencies": [
+        {
+            "name": "_chatcommands",
+            "type": "module",
+            "manifest": "https://github.com/League-of-Foundry-Developers/Chat-Commands-Lib/releases/download/1.4.0/module.json"
+        }
     ],
-  "languages": [
-      {
-        "lang": "en",
-        "name": "English",
-        "path": "lang/en.json"
-      }
-    ],
-    "socket": true,
-    "initiative": "1d6",
-    "gridDistance": 10,
+    "socket": false,
+    "gridDistance": 2,
     "gridUnits": "m",
-    "primaryTokenAttribute": null,
-    "secondaryTokenAttribute": null,
-    "url": "https://github.com/Mikerspp/FoundryVTT_Warhammer",
+    "url": "https://github.com/Mikerspp/FoundryVTT_Warhammer40k/",
     "manifest": "https://raw.githubusercontent.com/Mikerspp/FoundryVTT_Warhammer40k/main/system.json",
-    "download": "https://github.com/Mikerspp/FoundryVTT_Warhammer40k/archive/refs/tags/1.1.zip"
-  }
+    "download": "https://gitlab.com/linkedfluuuush/custom-system-builder/-/releases/1.7.2/downloads/custom-system-builder.zip"
+}
